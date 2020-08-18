@@ -12,8 +12,8 @@ public class Task4 {
         Scanner sc = new Scanner(System.in);
         sc.useDelimiter("\n");
 
-        Pattern pattern = Pattern.compile("[BT]\\s((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\s" +
-                "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
+//        Pattern pattern = Pattern.compile("[BT]\\s((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\s" +
+//                "((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)");
 
         while (sc.hasNextLine()) {
             lines.add(sc.nextLine());
@@ -24,9 +24,6 @@ public class Task4 {
             if (!record[1].equals(record[2])) {
                 if (record[0].equals("B")) {
                     connList.add(new String[]{record[1], record[2]});
-//                    if (!checkQuery(new String[]{record[1], record[2]}, connList)) {
-//                        connList.add(new String[]{record[1], record[2]});
-//                    }
                 } else if (record[0].equals("T")) {
                     if (checkQuery(new String[]{record[1], record[2]}, connList)) {
                         System.out.println("T");
@@ -55,15 +52,6 @@ public class Task4 {
                     return checkQuery(new String[]{connRec[1], queryRec[1]}, connListTemp);
                 }
             }
-//            if (connRec[0].equals(queryRec[0]) || connRec[1].equals(queryRec[0])) {
-//                List<String[]> connListTemp = new ArrayList<>(connList);
-//                connListTemp.remove(connRec);
-//                if (connRec[1].equals(queryRec[0])) {
-//                    return checkQuery(new String[]{connRec[0], queryRec[1]}, connListTemp);
-//                } else {
-//                    return checkQuery(new String[]{connRec[1], queryRec[1]}, connListTemp);
-//                }
-//            }
         }
         return false;
     }
