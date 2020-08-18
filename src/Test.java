@@ -8,10 +8,14 @@ public class Test {
         Integer[] t2 = {3,4};
 
 
-        System.out.println(Arrays.toString(Stream.concat(Arrays.stream(t1), Arrays.stream(t2))
-                .toArray(Integer[]::new)));
-
+        t1 = t2.clone();
+//        System.out.println(Arrays.toString(Stream.concat(Arrays.stream(t1), Arrays.stream(t2))
+//                .toArray(Integer[]::new)));
+//
         System.out.println(Arrays.toString(t1));
+
+
+        System.out.println();
 
     }
 }
